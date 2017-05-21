@@ -116,9 +116,9 @@ def get_info(snp_code, snp_list):
                 r = requests.get(url+request_id, headers=headers) 
                 if (r.ok) == True:
                     data = r.json()
-                    print ('\nQuery successful!\n\nInfo about', snp_code, "has been saved in the file:  ", snp_code+".info") 
-                    print ('\nYour json file contains the following', len(data[0].keys()) , 'keys:\n')
-                    print ('\n'.join(data[0].keys()), '\n\n')
+                    print(('\nQuery successful!\n\nInfo about', snp_code, "has been saved in the file:  ", snp_code+".info")) 
+                    print(('\nYour json file contains the following', len(list(data[0].keys())) , 'keys:\n'))
+                    print(('\n'.join(list(data[0].keys())), '\n\n'))
      
                     saveout = sys.stdout
                     file = snp_code+".info"
@@ -132,14 +132,14 @@ def get_info(snp_code, snp_list):
                     save.close()           #closing the file, and now stdout again on terminal
                                       
                 else:
-                    print ('Sorry, information for ', snp_code, " currently unavailable.")
+                    print(('Sorry, information for ', snp_code, " currently unavailable."))
    
     #REMINDER: The else below, goes with the:
     # if snp[0].count(snp_id)!=0:
     # If user didn't type the right snp_id, 
     # the following message will be printed:
     else:
-        print('\nSorry, but', snp_code, 'is not included in the dataset.\nOr maybe you have misspelled the snp_id?.\nPlease try again.\n')
+        print(('\nSorry, but', snp_code, 'is not included in the dataset.\nOr maybe you have misspelled the snp_id?.\nPlease try again.\n'))
     return("")
      
          

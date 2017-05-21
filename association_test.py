@@ -29,7 +29,7 @@ def genotype_test(snpCtrl,snpCss): #
         OddsRatio[a1+a1+'/'+a2+a2]=(gM[0][0]*gM[1][2])/(gM[1][0]*gM[0][2])
         OddsRatio[a1+a2+'/'+a2+a2]=(gM[0][1]*gM[1][2])/(gM[1][1]*gM[0][2])
     except RuntimeWarning:
-        print('This snp could not be included in association test: ' + snpCtrl[0])    
+        print(('This snp could not be included in association test: ' + snpCtrl[0]))    
     try:
         pval = scipy.stats.chi2_contingency(gM)[1]
     except ValueError:
